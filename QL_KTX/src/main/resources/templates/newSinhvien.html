@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Thêm Sinh Viên</h1>
+		<a href="new">New Product</a>
+		<br>
+		<form action="#" th:action="@{/save}" th:object="${sinhvien}"method="post">
+		<table border="1" cellpadding="10">
+				<tr >
+					<td>Ho ten</td>
+					<td><input type="text" th:field="*{hoten}"/></td>
+				</tr>
+				<tr>
+					<td>Ngay sinh</td>
+					<td><input type="date" th:field="*{ngaysinh}"/></td>
+				</tr>
+				<tr>
+					<td>Gioi tinh</td>
+					<td><input type="text" th:field="*{gioitinh}"/></td>
+				</tr>
+				<tr>
+					<td>CMND</td>
+					<td><input th:field="*{cmnd}"/></td>
+				</tr>
+				<tr>
+					<td>SDT</td>
+					<td><input type="text" th:field="*{sdt}"/></td>
+				</tr>
+				<tr>
+					<td>Lop</td> 
+					<td><input type="text" th:field="*{lop}"/></td>
+				</tr>
+				 <tr>
+					<td>Khoa</td>
+					<td><input type="text" th:field="*{khoa}"/></td>
+				</tr> 
+				<tr>
+					<td>Ho ngheo</td>
+					<td><input type="text" th:field="*{hongheo}"/></td>
+				</tr>
+				<tr>
+					<td clospan="2"><button type="submit">save</button></td>
+				</tr>
+		</table>
+		</form>
+	</div>
+</body>
+</html>

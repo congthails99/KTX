@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Danh Sách Sinh Viên</h1>
+		<a href="new">Thêm sinh viên</a><br>
+		<a href="hopdong">Hien thi hop dong</a>
+		<br>
+		<table border="1" cellpadding="10">
+			<thead>
+			<tr>
+				<th>Ma sinh vien</th>
+				<th>Ho ten</th>
+				<th>Ngay sinh</th>
+				<th>Gioi tinh</th>
+				<th>CMND</th>
+				<th>SDT</th>
+				<th>Lop</th>
+				<th>Khoa</th>
+				<th>Ho ngheo</th>
+				<th>Sua</th>
+				<th>Xoa</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="sinhvien : ${listSinhvien}">
+					<td th:text="${sinhvien.masinhvien}">Ma sinh vien</td>
+					<td th:text="${sinhvien.hoten}">Ho ten</td>
+					<td th:text="${sinhvien.ngaysinh}">Ngay sinh</td>
+					<td th:text="${sinhvien.gioitinh}">Gioi tinh</td>
+					<td th:text="${sinhvien.cmnd}">CMND</td>
+					<td th:text="${sinhvien.sdt}">SDT</td>
+					<td th:text="${sinhvien.lop}">Lop</td>
+					<td th:text="${sinhvien.khoa}">Khoa</td>
+					<td th:text="${sinhvien.hongheo}">Ho ngheo</td>
+					<td><a th:href="@{'/edit/'+${sinhvien.masinhvien}}">Sua</a></td>
+					<td><a th:href="@{'/delete/'+${sinhvien.masinhvien}}">Xoa</a></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

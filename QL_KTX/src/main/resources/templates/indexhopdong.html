@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Danh Sách Hop dong</h1>
+		<a href="newHopdong">Thêm hop dong</a>
+		<br>
+		<table border="1" cellpadding="10">
+			<thead>
+			<tr>
+				<th>Ma hop dong</th>
+			    <th>Ma sinh vien</th>
+				<th>Ma nhan vien</th>
+				<th>So phong</th>
+				<th>Khu nha</th>
+				<th>Ngay lap</th>
+				<th>Ngay bat dau</th>
+				<th>Ngay ket thuc</th>
+				<th>Sua</th>
+				<th>Xoa</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="hopdong : ${listHopdong}">
+					<td th:text="${hopdong.mahopdong}">Mã hơp đồng</td>
+				    <td th:text="${hopdong.masinhvien}">Mã sinh viên</td>
+					<td th:text="${hopdong.manhanvien}">Mã nhân viên</td>
+					<td th:text="${hopdong.sophong}">Số phòng</td>
+					<td th:text="${hopdong.khunha}">Khu nhà</td>
+					<td th:text="${hopdong.ngaylap}">Ngày lập</td>
+					<td th:text="${hopdong.ngaybatdau}">Ngày bắt đầu</td>
+					<td th:text="${hopdong.ngayketthuc}">Ngày kết thúc</td>
+					<td><a th:href="@{'/editHopdong/'+${hopdong.mahopdong}}">Sua</a></td>
+					<td><a th:href="@{'/deleteHopdong/'+${hopdong.mahopdong}}">Xoa</a></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
